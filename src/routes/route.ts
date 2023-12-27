@@ -1,6 +1,5 @@
 import express from "express";
 import en2ml from "../utils/transliterator";
-import { getMeaning } from "../database/functions/getMeaning";
 
 
 const router = express.Router();
