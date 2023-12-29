@@ -1,5 +1,6 @@
 import express from "express";
 import en2ml from "../utils/transliterator";
+import { getMeaning } from "../data/getMeaning";
 
 
 const router = express.Router();
@@ -11,14 +12,9 @@ router.get("/", (_req, res) => {
 router.post("/rtrnsltrt", (req, res) => {
     const { word } = req.body;
 
-    console.log("Atleast, here");
     if (!word) return;
 
-    console.log(word);
-
     const resulting_words = en2ml(word);
-
-    console.log(resulting_words);
 
     const lowercase_letters = /.*[a-z].*/;
 
@@ -29,8 +25,6 @@ router.post("/rtrnsltrt", (req, res) => {
             result.push(w);
         }
     });
-
-    console.log(result);
 
     if (!result) {
         return res.status(204).json({message: "The word cannot be transliterated"});

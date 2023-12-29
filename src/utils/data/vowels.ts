@@ -25,7 +25,7 @@ export const vowels: letters[] = [
         english: "oo",
         malayalam: ["ഊ"],
     },
-    // { when i find a significant ue for this letter, I'll uncomment it again because it may or may not be a trouble cause?😗
+    // { when i find a significant use for this letter, I'll uncomment it again because it may or may not be a trouble cause?😗
     //     english: "ru",
     //     malayalam: ["ഋ"], // is it ever used in daily conversations?
     // },
