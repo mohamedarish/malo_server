@@ -1,3 +1,5 @@
 export const getMeaning = async (words: string[]) => {
-    console.log(words);
+    console.log("from here",words);
+
+    return 0;
 };

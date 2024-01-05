@@ -33,15 +33,15 @@ router.post("/rtrnsltrt", (req, res) => {
     return res.status(200).json({ result });
 });
 
-router.post("/define", (req, res) => {
+router.post("/define", async (req, res) => {
     const { words } = req.body;
 
     if (!words) return;
 
-    const meanings = getMeaning(words);
+    const meanings = await getMeaning(words);
 
     if (!meanings) {
-        return res.status(204).json({message: "The word does not have any meaning in the datuk"});
+        return res.status(204);
     }
 
     return res.status(200).json({meanings});
