@@ -1,5 +1,16 @@
 import { Schema, model } from "mongoose";
 
+const defSchema = new Schema({
+    entry: {
+        type: String,
+        required: true
+    },
+    type: {
+        type: String,
+        required: true
+    }
+});
+
 const meaningSchema = new Schema({
     head: {
         type: String,
@@ -18,14 +29,11 @@ const meaningSchema = new Schema({
         required: true
     },
     defs: {
-        type: [
-            {
-                "entry": String,
-                "type": String
-            }
-        ],
+        type: 
+            [defSchema]
+        ,
         required: true
     }
 });
 
-export const datuk = model("datuk", meaningSchema);
+export const datuk = model("datuk", meaningSchema, "datuk");
