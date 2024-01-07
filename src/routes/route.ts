@@ -2,7 +2,6 @@ import express from "express";
 import en2ml from "../utils/transliterator";
 import { getMeaning } from "../data/getMeaning";
 
-
 const router = express.Router();
 
 router.get("/", (_req, res) => {
@@ -27,7 +26,9 @@ router.post("/rtrnsltrt", (req, res) => {
     });
 
     if (!result) {
-        return res.status(204).json({message: "The word cannot be transliterated"});
+        return res
+            .status(204)
+            .json({ message: "The word cannot be transliterated" });
     }
 
     return res.status(200).json({ result });
@@ -44,7 +45,7 @@ router.post("/define", async (req, res) => {
         return res.status(204);
     }
 
-    return res.status(200).json({meanings});
+    return res.status(200).json({ meanings });
 });
 
 export default router;

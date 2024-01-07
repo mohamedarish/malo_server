@@ -3,37 +3,35 @@ import { Schema, model } from "mongoose";
 const defSchema = new Schema({
     entry: {
         type: String,
-        required: true
+        required: true,
     },
     type: {
         type: String,
-        required: true
-    }
+        required: true,
+    },
 });
 
 const meaningSchema = new Schema({
     head: {
         type: String,
-        required: true
+        required: true,
     },
     entry: {
         type: String,
-        required: true
+        required: true,
     },
     origin: {
         type: String,
-        required: true
+        required: true,
     },
     info: {
         type: String,
-        required: true
+        required: true,
     },
     defs: {
-        type: 
-            [defSchema]
-        ,
-        required: true
-    }
+        type: [defSchema],
+        required: true,
+    },
 });
 
 export const datuk = model("datuk", meaningSchema, "datuk");
