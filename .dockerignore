@@ -1,5 +1,2 @@
-ode_modules/
-
-src/
-
+node_modules/
 ml2mldictionary2mongo/
