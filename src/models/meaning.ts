@@ -34,4 +34,4 @@ const meaningSchema = new Schema({
     },
 });
 
-export const datuk = model("datuk", meaningSchema, "datuk");
+export const datuk = model("malo", meaningSchema, "malo");
