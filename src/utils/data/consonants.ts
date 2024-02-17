@@ -66,7 +66,7 @@ export const consonants: letters[] = [
         malayalam: ["പ"],
     },
     {
-        english: "ph",
+        english: "f",
         malayalam: ["ഫ"],
     },
     {

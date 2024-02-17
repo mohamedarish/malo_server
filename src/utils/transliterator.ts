@@ -75,9 +75,11 @@ const en2ml = (word: string): string[] => {
                             flag = false;
                             oldRes.forEach((element) => {
                                 // no chillaksharam can occur at the start of the word and hence we assume that res.length >= 1
-                                compounds[j].malayalam.forEach((aksharam) => {
-                                    res.push(element + aksharam);
-                                });
+                                chillaksharam[j].malayalam.forEach(
+                                    (aksharam) => {
+                                        res.push(element + aksharam);
+                                    },
+                                );
                             });
                             break;
                         }

@@ -98,7 +98,7 @@ export const compounds: letters[] = [
         malayalam: ["ക്ഷ"],
     },
     {
-        english: "mb",
+        english: "mt",
         malayalam: ["ന്റ"],
     },
     {

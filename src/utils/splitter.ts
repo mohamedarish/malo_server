@@ -14,7 +14,10 @@ const split = (word: string): string[] => {
             while (
                 i < word.length - 1 &&
                 word[i + 1] == "h" &&
-                current.length < 3
+                current.length < 3 &&
+                !["w", "r", "y", "p", "f", "l", "x", "v", "m"].includes(
+                    current.charAt(current.length - 1),
+                )
             ) {
                 i += 1;
                 current += word[i];
