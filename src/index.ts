@@ -2,8 +2,11 @@ import express from "express";
 import router from "./routes/route";
 import "dotenv/config";
 import mongoose from "mongoose";
+import cors from "cors";
 
 const app = express();
+
+app.use(cors());
 
 const CONNECTION_STRING = process.env.CONNECTION_STRING!;
 
