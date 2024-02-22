@@ -7,7 +7,6 @@ import cors from "cors";
 const app = express();
 
 app.use(cors());
-app.options("*", cors());
 
 const CONNECTION_STRING = process.env.CONNECTION_STRING!;
 
