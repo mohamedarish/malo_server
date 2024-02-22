@@ -4,10 +4,23 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import cors from "cors";
 
+import { Request, Response, NextFunction } from "express";
+
 const app = express();
 
 app.use(cors());
 app.options("*", cors());
+const allowCrossDomain = function (
+    _req: Request,
+    res: Response,
+    next: NextFunction,
+) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    next();
+};
+app.use(allowCrossDomain);
 
 const CONNECTION_STRING = process.env.CONNECTION_STRING!;
 
