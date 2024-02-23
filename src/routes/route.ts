@@ -46,7 +46,7 @@ router.post("/define", cors(), async (req, res) => {
         return res.status(204);
     }
 
-    return res.status(200).json({ meanings });
+    return res.status(200).json({ meanings: meanings.meanings });
 });
 
 export default router;
