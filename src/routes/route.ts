@@ -1,14 +1,15 @@
 import express from "express";
 import en2ml from "../utils/transliterator";
 import { getMeaning } from "../data/getMeaning";
+import cors from "cors";
 
 const router = express.Router();
 
-router.get("/", (_req, res) => {
+router.get("/", cors(), (_req, res) => {
     res.send("The server is running!\n");
 });
 
-router.post("/rtrnsltrt", (req, res) => {
+router.post("/rtrnsltrt", cors(), (req, res) => {
     const { word } = req.body;
 
     if (!word) return;
@@ -34,7 +35,7 @@ router.post("/rtrnsltrt", (req, res) => {
     return res.status(200).json({ result });
 });
 
-router.post("/define", async (req, res) => {
+router.post("/define", cors(), async (req, res) => {
     const { words } = req.body;
 
     if (!words) return;
