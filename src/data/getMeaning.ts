@@ -6,7 +6,7 @@ export const getMeaning = async (words: string[]) => {
         const m: string[][] = [];
 
         const meaning = await datuk.find({
-            entry: { $regex: `^${words[i]}[0-9]+` },
+            entry: { $regex: `^${words[i]}[0-9]*` },
         });
 
         if (meaning) {
