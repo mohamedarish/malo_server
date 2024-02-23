@@ -27,7 +27,5 @@ export const getMeaning = async (words: string[]) => {
         });
     }
 
-    return {
-        meanings,
-    };
+    return meanings;
 };
