@@ -6,13 +6,23 @@ import cors from "cors";
 const router = express.Router();
 
 router.get("/", cors(), (_req, res) => {
-    res.send("The server is running!\n");
+    res.status(200).send("The server is running!\n");
 });
 
 router.post("/rtrnsltrt", cors(), (req, res) => {
-    const { word } = req.body;
+    let { word }: { word: string | null } = req.body;
 
-    if (!word) return;
+    if (!word) {
+        res.status(204).send();
+        return;
+    }
+
+    word = word.split(" ")[0];
+
+    if (!word) {
+        res.status(204).send();
+        return;
+    }
 
     const resulting_words = en2ml(word);
 
@@ -27,9 +37,7 @@ router.post("/rtrnsltrt", cors(), (req, res) => {
     });
 
     if (!result) {
-        return res
-            .status(204)
-            .json({ message: "The word cannot be transliterated" });
+        return res.status(204);
     }
 
     return res.status(200).json({ result });
@@ -38,12 +46,15 @@ router.post("/rtrnsltrt", cors(), (req, res) => {
 router.post("/define", cors(), async (req, res) => {
     const { words } = req.body;
 
-    if (!words) return;
+    if (!words) {
+        res.status(204).send();
+        return;
+    }
 
     const meanings = await getMeaning(words);
 
     if (!meanings) {
-        return res.status(204);
+        return res.status(204).send();
     }
 
     return res.status(200).json({ meanings });
