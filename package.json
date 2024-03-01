@@ -38,5 +38,6 @@
         "prettier": "^3.1.1",
         "ts-node": "^10.9.2",
         "typescript": "^5.3.3"
-    }
+    },
+    "packageManager": "npm@10.5.0+sha1.726f91df5b1b14d9637c8819d7e71cb873c395a1"
 }

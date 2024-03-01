@@ -1,2 +1,10 @@
 node_modules/
 ml2mldictionary2mongo/
+src/
+.eslint*
+.prettier*
+ts*
+.git*
+.example*
+*.md
+.env

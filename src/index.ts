@@ -10,9 +10,11 @@ app.use(cors());
 
 const CONNECTION_STRING = process.env.CONNECTION_STRING!;
 
-mongoose.connect(CONNECTION_STRING).then(() => {
-    console.log("Successfully connected to mongoDB");
-});
+mongoose
+    .connect(`${CONNECTION_STRING}?retryWrites=true&w=majority`)
+    .then(() => {
+        console.log("Successfully connected to mongoDB");
+    });
 
 const PORT = process.env.PORT || 8000;
 

@@ -4,10 +4,8 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN npm i --include=dev
+RUN npm i
 
 COPY . .
-
-RUN npm run ts
 
 CMD ["npm", "start"]
