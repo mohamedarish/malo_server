@@ -12,7 +12,7 @@ router.get("/", cors(), (_req, res) => {
 router.post("/rtrnsltrt", cors(), (req, res) => {
     let { word }: { word: string | null } = req.body;
 
-    if (!word) {
+    if (!word || word.length > 50) {
         res.status(204).send();
         return;
     }
