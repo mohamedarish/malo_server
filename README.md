@@ -2,6 +2,8 @@
 
 The server required for [malo](https://addons.mozilla.org/en-US/firefox/addon/malo/).
 
+sadas
+
 ## Setup
 
 ### From source
